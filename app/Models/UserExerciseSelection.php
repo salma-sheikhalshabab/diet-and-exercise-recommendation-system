@@ -5,16 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Progression extends Model
+class UserExerciseSelection extends Model
 {
     use HasFactory;
+
     protected $fillable = [
         'user_id',
+        'exercise_id',
         'date',
-        'total_calories',
-        'total_fat',
-        'total_protein',
     ];
+
+    public function exercise()
+    {
+        return $this->belongsTo(Exercise::class);
+    }
 
     public function user()
     {

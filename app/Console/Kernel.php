@@ -12,7 +12,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        // $schedule->command('inspire')->hourly();
+        $schedule->command('reset:daily-selections')->dailyAt('00:00');
+        $schedule->command('reset:daily-exercise-selections')->dailyAt('00:00');
     }
 
     /**

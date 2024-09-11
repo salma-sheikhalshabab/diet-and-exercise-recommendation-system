@@ -12,11 +12,12 @@ class Exercise extends Model
     protected $fillable = [
         'muscle_name',
         'exercise_name',
-        'exercise_image',
+        'sets',
+        'Reps_per_set',
         'gif',
         'description',
         'calories',
-        'duration',
+        'Duration per set',
     ];
 
     public function users()

@@ -27,7 +27,8 @@ class User extends Authenticatable
         'weight',
         'activity_level',
         'disease',
-        'allergy'
+        'allergy',
+        'target_weight'
 
     ];
 

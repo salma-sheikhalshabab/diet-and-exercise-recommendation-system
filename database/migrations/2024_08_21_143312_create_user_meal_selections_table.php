@@ -11,15 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('progressions', function (Blueprint $table) {
+        Schema::create('user_meal_selections', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('meal_id')->constrained()->onDelete('cascade');
+            $table->string('meal_type');
             $table->date('date');
-            $table->float('total_calories')->default(0);
-            $table->float('total_fat')->default(0);
-            $table->float('total_protein')->default(0);
             $table->timestamps();
-
         });
     }
 
@@ -28,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('progressions');
+        Schema::dropIfExists('user_meal_selections');
     }
 };

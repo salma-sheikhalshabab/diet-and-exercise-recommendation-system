@@ -12,18 +12,23 @@ class Meal extends Model
         'meal_name',
         'meal_type',
         'description',
+        'instructions',
+        'ingredients',
         'photo',
         'calories',
         'fat',
         'protein',
-        //'carbs',
+
     ];
+    protected $casts = [
+
+        'ingredients' => 'array',
+
+    ];
+
     public function users()
     {
         return $this->belongsToMany(User::class);
     }
-    public function favoritedByUsers()
-    {
-        return $this->belongsToMany(User::class, 'favorites');
-    }
+
 }

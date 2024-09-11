@@ -16,10 +16,11 @@ return new class extends Migration
             $table->string('muscle_name');
             $table->string('exercise_name');
             $table->text( 'description');
+            $table->string('Reps_per_set');
+            $table->integer('sets');
             $table->string('gif')->default('/image/exercises/default.jpg');
-            $table->string('exercise_image')->default('/image/exercises/default.jpg');
             $table->float( 'calories');
-            $table->time( 'duration');
+            $table->time( 'Duration per set');
             $table->timestamps();
         });
     }

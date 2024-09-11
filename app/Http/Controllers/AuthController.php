@@ -52,7 +52,7 @@ class AuthController extends Controller
             'allergy' => [
                 'nullable',
                 'array',
-                Rule::in(['Peanut', 'Tree nuts', 'Milk', 'Egg','Fish','Sesame','Soybean','Wheat','shellfish']),
+                Rule::in(['peanut', 'tree nuts', 'Milk', 'eggs','Fish','Sesame','Soybean','Wheat','shellfish']),
             ],
             'disease' => [
                 'nullable',

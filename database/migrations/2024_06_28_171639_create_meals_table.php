@@ -14,13 +14,14 @@ return new class extends Migration
         Schema::create('meals', function (Blueprint $table) {
             $table->id();
             $table->string('meal_name');
-            $table->enum('meal_type',['breakfast','lunch','dinner']);
+            $table->enum('meal_type',['breakfast','lunch','dinner','snack']);
             $table->text('description');
+            $table->text('instructions');
+            $table->json('ingredients');
             $table->string('photo');
             $table->float('calories');
             $table->float('fat');
             $table->float('protein');
-            //$table->float('carbs');
             $table->timestamps();
 
 
